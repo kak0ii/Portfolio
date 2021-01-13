@@ -1,0 +1,33 @@
+body
+{
+background-image: url("../FoodRecipe/images/b2.JPG");
+background-size: 100%;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+text-align: center;
+
+}
+h1{
+    color: rgb(7, 3, 29);
+    font-size: 60px;
+    
+}
+
+h3{
+    font-size: 30px;
+
+}
+h4{
+    color: blue;
+}
+li {
+    text-align: left;
+    text-justify: auto;  
+    list-style: none;
+    padding-left: 8%;
+  }
+.background{
+   
+    background-color: black;
+    border-radius: 50% ;
+    box-shadow: 200px 200px 150px 50px rgba(192, 159, 159, 0.62);
+}

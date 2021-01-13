@@ -1,0 +1,86 @@
+* {
+    margin: 0px;
+    padding: 0px;
+   
+
+  }
+  body{
+    background-image: url("../AirlineBookings/images/bg_body.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    font-family: "Meiryo", "メイリオ", "MS UI Gothic", "Lucida Grande", "ＭＳ Ｐゴシック", sans-serif;
+    overflow-y: scroll;
+  }
+  
+ 
+  .container{
+      display: block;
+      width: 50%;
+      height: 30%;
+      margin: auto;
+     
+      
+  }
+  .content{
+      
+      background-color: aliceblue;
+      display: block;
+      width: auto;
+      height: auto;
+      padding: 10px;
+      -webkit-box-shadow: 5px 7px 7px 0px rgba(0,0,0,0.73); 
+      box-shadow: 5px 7px 7px 0px rgba(0,0,0,0.73);
+      color:#c90000;
+  }
+  .h_1{
+      padding-top: 10px;
+      padding-left: 10px;
+      width: 369px;
+      height: 34px;
+  }
+  .header{
+      background-color: transparent;
+      width: 100%;
+      height: 62px;
+      padding: 14px 0;
+
+     
+      
+  }
+  label{
+      color: black;
+      
+  }
+  .cent{
+      text-align: center;
+  }
+  .input1{
+      width: 5%;
+     
+      
+  }
+  select{
+      width: auto
+  }
+  
+  .btn{
+    background-color: #c90000;
+    display: block;
+    margin-left: auto ;
+    margin-right: auto;
+    padding: 10px;
+    color: #ffffff;
+    border: none;
+  }
+  .minbtn{
+    float: right;
+    background-color: #c90000;
+    display: block;
+    padding: 5px;
+    color: #ffffff;
+    border: none;
+  }
+  
+  

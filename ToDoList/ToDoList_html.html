@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../ToDoList/ToDoList_css.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="backcont">
+    <div id="todoApp">
+        <div class="header"><h1>Todo List</h1></div><br>
+        <div v-for="(todoList, index) in todoLists" :key="index">
+            <div class="lists">
+               
+                {{index+1}}.{{todoList.list}} <button @click="del(index)">ˣ</button>
+           
+            </div> <br>
+
+        </div><br>
+       
+            <input  type="text" v-model = "inputList.list" v-on:keyup.enter="add"><button  @click="add" >Add</button> <br> <br>
+       
+       
+            <input type="update" v-model = "updateMsg" v-on:keyup.enter="saveUpdt"><button  @click="saveUpdt">update</button>
+     
+       
+    </div>
+</div>
+    <script src="../ToDoList/ToDoList_js.js"></script>
+</body>
+</html>

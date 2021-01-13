@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="../AirlineBookings/AirlineBookings_css.css">
+    <title></title>
+</head>
+
+<body>
+    <div id="airlinebookings">
+
+        <div class="header">
+            <img class="h_1" src="../AirlineBookings/images/logo_jal.png" alt="Jal Logo">
+        </div> <br> <br> <br>
+
+
+
+        <div class="container">
+            <div v-for="(passengerInfo, index) in passengerInfos" :key="index">
+                <div class="content">
+                    <img src="../AirlineBookings/images/logo_jal.png" alt="JAL" width="200px" height="20px">
+                    <label style="float: right;"> <b>Flight Seat <br> <span style="color: #c90000;">{{passengerInfo.flight_no}} &nbsp; {{passengerInfo.seat_no}}</span>
+                    </label></b>
+                    <br><br><br>
+
+                    <label> <b>{{passengerInfo.destination.from.name}}
+                            <span style="float: right;">{{passengerInfo.destination.to.name}}</span></b><br><i
+                            style='font-size: 30px;  padding-left: 50%;' class='fas'>&#xf072;</i>
+                        <h2><span
+                                style="color: #c90000;padding-left: 50px; font-size: larger;">{{passengerInfo.destination.from.code}}</span>
+                            <span style="color: #c90000;padding-left: 50px; font-size: larger; float:right;">{{passengerInfo.destination.to.code}}</span>
+                        </h2>
+                    </label> <br>
+
+                    <b> <label>DATE <span style="padding-left: 30%;">BOARDING TIME</span>
+                            <span style="float: right;">GATE</span>
+                            <br> <span style="color: #c90000; ">{{passengerInfo.date}}</span>
+                            <span style="color: #c90000; padding-left: 35%;">{{passengerInfo.time}}</span>
+                            <span style="color: #c90000; float: right; ">{{passengerInfo.gate}}</span>
+                        </label></b> <br><br>
+                    <b><label>NAME <span style="padding-left: 35%;">CLASS</span>
+                            <span style="float: right;">STATUS</span> <br>
+                            <span style="color: #c90000; ">{{passengerInfo.passenger_name}}</span>
+                            <span style="color: #c90000; padding-left: 30%; ">{{passengerInfo.class}}</span>
+                            <span style="color: #c90000; float: right; ">{{passengerInfo.status}}</span>
+                        </label></b>
+
+
+                </div>
+                <br> <br> <br>
+            </div>
+
+
+            <br> <br><button class="minbtn" @click="show^=true">show</button>
+            <br><br> <br>
+
+            <div class="content" v-show="show">
+                <img src="../AirlineBookings/images/logo_jal.png" alt="JAL" width="200px" height="20px">
+                <label> <b><span style=" float: right;">Flight Seat</span> <br>
+                        <span style="padding-left: 87%;"> 
+                            <input class="input1" type="text" v-model ="dataInput.flight_no"> 
+                            <input class="input1" v-model="dataInput.seat_no"
+                                type="text"> </span>
+                </label></b>
+                <br><br><br>
+
+                <b><label>ORIGIN <span style="float: right;">DESTINATION</span></label>
+                    <br><select v-model="departureDestination">
+                        <option v-for="(destination, index) in destinations"
+                            :value="{ id: destination.code, text: destination.name }" :key="index">
+                            {{ destination.code }}
+                        </option>
+                    </select>
+
+
+                    <i style='font-size: 30px;  padding-left: 45%;' class='fas'>&#xf072;</i>
+                    <span style="float: right;">
+                        <br> <select v-model="arrivalDestination">
+                            <option v-for="(destination, index) in destinations"
+                                :value="{ id: destination.code, text: destination.name }" :key="index">
+                                {{ destination.code }}
+                            </option>
+                        </select></span>
+                </b> <br> <br>
+                <b> <label>DATE <span style="padding-left: 30%;">BOARDING TIME</span>
+                        <span style="float: right;">GATE</span> <br> <br>
+                        <span><input type="date" v-model = "date"></span>
+                        <span style="padding-left: 5%;"><input type="time" v-model ="time"></span>
+                        <span style="padding-left:50%;"><input type="text" class="input1"v-model="dataInput.gate"></span> <br><br> <br>
+
+                        <label>NAME<span style="padding-left: 35%;">CLASS</span>
+                            <span style="float: right;">STATUS</span> <br>
+                            <span><input type="text" v-model ="dataInput.passenger_name"></span>
+                            <span style="padding-left: 14%; ">
+                                <select v-model="flightClass">
+                                    <option v-for="(fClass, index) in fClass"
+                                        :value="{ id: fClass.info, text: fClass.name }" :key="index">
+                                        {{fClass.info}}
+                                    </option>
+
+
+                                </select></span>
+                            <span style="float: right; ">
+                                <select v-model="flightStatus">
+                                    <option v-for="(status, index) in status"
+                                        :value="{ id: status.info, text: status.name }" :key="index">
+                                        {{status.info}}
+                                    </option>
+
+
+                                </select></span>
+                        </label></b> <br> <br> <br> <br>
+                <span><button class="btn" @click="add">Submit</button></span>
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <script src="../AirlineBookings/AirlineBookings_js.js"></script>
+</body>
+
+</html>
